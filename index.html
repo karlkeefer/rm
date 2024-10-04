@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Rachel Munzig</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Boogaloo' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      html, body{
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.4em;
+        font-size: 1.2em;
+	margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        background: #414640 url('bg.jpg') center center;
+        background-size: cover;
+        min-height: 100%;
+      }
+      h1 {
+        font-family: 'Boogaloo', cursive;
+        color: #555;
+      }
+      #main{
+        margin: 0 auto;
+        width: 90%;
+        max-width: 700px;
+        color: #444;
+        padding: 30px 50px;
+        background: rgba(255,255,255,0.6);
+        box-sizing: border-box;
+	position: relative;
+	top: 120px;
+      }
+      .bgcover{
+        background: #414640;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+      }
+      a{
+        color: #3962A5;
+        transition: 200ms all ease-in-out;
+        text-decoration: none;
+      }
+      a:hover{
+        color: #6503AB;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $("#main").hide();
+
+        //cover background image until it's fully loaded
+        $('<img/>').attr('src', './bg.jpg').load(function() {
+          $(this).remove();
+          $(".bgcover").fadeOut({duration: 500});
+          $("#main").delay(300).fadeIn({duration: 500});
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <div class="bgcover"></div>
+    <div id="main">
+      <h1>Hi! I'm Rachel Munzig</h1>
+      <p>I am an experienced educator, passionate environmentalist, and life-long advocate for social justice.</p>
+      <p>You can read about my work experience on <a href="https://www.linkedin.com/in/rachel-munzig-73516181">LinkedIn</a>.</p>
+    </div>
+  </body>
+</html>
